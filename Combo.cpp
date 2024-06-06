@@ -17,17 +17,22 @@ string Combo::str() {
 }
 
 int Combo::calculaTotalPagar() {
-    int total = Producto::calculaTotalPagar();
-    int descuento = 0;
+    int total = precio * peso * clave;
+    int descuento;
+    int num;
     if (clave == 1) {
         descuento = 25;
-        int num = total / 100;
-        total -= descuento * (num - 1);
+        num = total / 100;
+        for (int index = 0; index < num; index++) {
+            total = total - descuento;
+        }
         return total;
     } else if (clave == 2) {
         descuento = 30;
-        int num = total / 100;
-        total -= descuento * (num - 1);
+        num = total / 100;
+        for (int index = 0; index < num; index++) {
+            total = total - descuento;
+        }
         return total;
     }else {
         return total;
