@@ -18,8 +18,8 @@ public:
     Combo();
     Combo(string _nombre, int _precio, int _peso, int _clave);
 
-    string str();
-    int calculaTotalPagar();
+    string str() override;
+    int calculaTotalPagar() override;
 
 };
 

@@ -10,7 +10,7 @@ Pedido::Pedido() {
     }
     cantidad = 0;
 }
-void Pedido::leerArchivo(std::string nombre ){
+void Pedido::leerArchivo(std::string nombre){
     fstream archivo;
     string row[5];
     string line, word;
@@ -48,10 +48,11 @@ void Pedido::ticketCliente() {
     int total = 0;
     for (int index = 0; index < cantidad; index++) {
         if (arrPtrProductos[index] != nullptr) {
-            std::cout << arrPtrProductos[index]->str() << std::endl;
+            cout << arrPtrProductos[index]->str() <<  endl;
             total += arrPtrProductos[index]->calculaTotalPagar();
         }
     }
+    cout << cantidad << " articulos" << endl;
     cout << "Total a pagar: $" << total << endl;
 }
 

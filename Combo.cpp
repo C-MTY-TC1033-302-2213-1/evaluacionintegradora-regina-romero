@@ -8,7 +8,7 @@ Combo::Combo() : Producto() {
     clave = 0;
 }
 
-Combo::Combo(string _nombre, int _precio, int _peso, int _clave) {
+Combo::Combo(string _nombre, int _precio, int _peso, int _clave):Producto(_nombre, _precio, _peso) {
     clave = _clave;
 }
 
@@ -17,23 +17,20 @@ string Combo::str() {
 }
 
 int Combo::calculaTotalPagar() {
-    int total = precio*peso*clave;
-    int num;
-    if (clave == 1){
-        num = total/ 100;
-        for(int index = 1; index < num; index++) {
-            total = total - 25;
-        }
+    int total = Producto::calculaTotalPagar();
+    int descuento = 0;
+    if (clave == 1) {
+        descuento = 25;
+        int num = total / 100;
+        total -= descuento * (num - 1);
         return total;
-    }
-    else if (clave == 2){
-        num = total/ 100;
-        for(int index = 1; index < num; index++) {
-            total = total - 30;
-        }
+    } else if (clave == 2) {
+        descuento = 30;
+        int num = total / 100;
+        total -= descuento * (num - 1);
         return total;
-    }
-    else {
+    }else {
         return total;
     }
 }
+

@@ -8,7 +8,7 @@ Verdura::Verdura() : Producto() {
     temporada = "Invierno";
 }
 
-Verdura::Verdura(string _nombre, int _precio, int _peso, string _temporada) {
+Verdura::Verdura(string _nombre, int _precio, int _peso, string _temporada):Producto(_nombre, _precio, _peso) {
     temporada = _temporada;
 }
 

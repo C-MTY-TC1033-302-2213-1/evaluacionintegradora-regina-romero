@@ -18,10 +18,12 @@ public:
     Verdura();
     Verdura(string _nombre, int _precio, int _peso, string _temporada);
 
-    string str();
-    int calculaTotalPagar();
+    string str() override;
+    int calculaTotalPagar() override;
 
 };
 
 #endif //VERDURA_H
+
+
 
