@@ -53,6 +53,6 @@ void Pedido::ticketCliente() {
         }
     }
     cout << cantidad << " articulos" << endl;
-    cout << "Total a pagar: $" << total << endl;
+    cout << "Total a pagar: $ " << total << "\n" << endl;
 }
 
